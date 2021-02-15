@@ -632,7 +632,7 @@
 
 				_p('')
 			elseif (path.getextension(file) == ".rc") then
-				_p('$(OBJDIR)/%s.res: %s', _MAKE.esc(path.getbasename(file)), _MAKE.esc(file))
+				_p('$(OBJDIR)/%s.res: %s | $(OBJDIR)', _MAKE.esc(path.getbasename(file)), _MAKE.esc(file))
 				if prj.msgresource then
 					_p('\t@echo ' .. prj.msgresource)
 				else

@@ -28,8 +28,12 @@ else
   RM    = $(SILENT) del /F "$(subst /,\\,$(1))" 2> nul || exit 0
 endif
 
-CC  = gcc
-CXX = g++
+CC  = $(HOST_CC)
+CXX = $(HOST_CXX)
+CPPFLAGS = $(HOST_CPPFLAGS)
+CFLAGS = $(HOST_CFLAGS)
+CXXFLAGS = $(HOST_CXXFLAGS)
+LDFLAGS = $(HOST_LDFLAGS)
 AR  = ar
 
 ifndef RESCOMP
